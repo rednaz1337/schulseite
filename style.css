@@ -17,10 +17,14 @@
 }
 
 :root{
-    --main-background: #1b2229;
-    --side-background: #0d1013;
+    --main-background: #171a27;
+    --side-background: #0f111a;
+    /*--color1: #ff6a07;
+    --color2: #ff194b;*/
+    --color1: #F78C6C;
+    --color2: #82AAFF;
     --radius: 20px;
-    --main-gradient: linear-gradient(90deg, #ff6a07, #ff194b);
+    --main-gradient: linear-gradient(90deg, var(--color1), var(--color2));
 }
 
 
@@ -36,7 +40,7 @@ body{
 
     margin: 0 auto;
     background-color: var(--side-background);
-    color: white;
+    color: #8f93a2;
     
     font-family: Metropolis;
     font-weight: normal;
@@ -45,7 +49,7 @@ body{
 header{
 
     grid-area: header;
-    background: var(--main-gradient), url("img/wyre.png");
+    background: var(--main-gradient), url("img/wyre.webp");
 
     background-blend-mode: multiply;
     background-position: center;
@@ -71,18 +75,19 @@ header > h1{
 }
 
 header > h2{
-    text-shadow: 5px 5px 3px rgba(0, 0, 0, 1);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
     margin-bottom: 2em;
     margin-left: 0.3em;
     margin-right: 0.3;
     text-align: center;
+    color: white;
 }
 
 .content > h1{
     font-size: 2.5em;
     font-weight: lighter;
     text-decoration: underline;
-    text-decoration-color: #ff6a07;
+    text-decoration-color: var(--color1);
     text-decoration-thickness: 3px;
 
 }
@@ -110,19 +115,21 @@ header > h2{
 .sidebar > a{
     display: block;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    color: white;
+    margin-bottom: 10px;
+    color: #8f93a2;
     font-size: 1.5em;
     text-decoration: none;
     border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
     border: 2px solid var(--main-background);
     border-left: none;
+    
+    transition: all 0.25s;
 }
 
 .sidebar > a:hover{
-    background: var(--main-gradient);
+    background: var(--color1);
+    color: var(--side-background);
 }
 
 footer{
@@ -131,8 +138,8 @@ footer{
 }
 
 a{
-    color: #ff6a07;
-    text-decoration-color: #ff6a07;
+    color: var(--color1);
+    text-decoration-color: var(--color1);
 }
 
 
@@ -140,6 +147,8 @@ a{
     .sidebar{
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
         padding-top: 10px;
         padding-bottom: 10px;
     }
