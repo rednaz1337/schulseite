@@ -48,17 +48,21 @@ body{
 
 @keyframes header-fade{
     0%{
-        background-position: 0% 50%;
+        background-position: 0% 50%, 0%;
     }
     100%{
-        background-position: 125% 50%;
+        background-position: 125% 50%, 0%;
     }
 }
 
 header{
 
     grid-area: header;
-    background: linear-gradient(90deg, var(--color1) 0%, #FF5370 25%, var(--color2) 50%, #C3E88D 75%, var(--color1) 100%), url("img/wyre.webp");
+    background: linear-gradient(90deg, 
+                    var(--color1) 0%, 
+                    var(--color2) 50%, 
+                    var(--color1) 100%), 
+                url("img/wyre.webp");
 
     background-blend-mode: multiply;
     background-position: center, center;
@@ -78,11 +82,12 @@ header{
 
 header > h1{
     font-size: 5em;
-    font-weight: bold;
+    font-weight: lighter;
+    text-align: center;
     color: white;
     margin-top: 1em;
     margin-bottom: 0.2em;
-    text-shadow: 5px 5px 7px rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
 header > h2{
@@ -91,12 +96,13 @@ header > h2{
     margin-left: 0.3em;
     margin-right: 0.3;
     text-align: center;
+    font-weight: lighter;
     color: white;
 }
 
 .content > h1{
     font-size: 2.5em;
-    font-weight: lighter;
+    font-weight: normal;
     text-decoration: underline;
     text-decoration-color: var(--color1);
     text-decoration-thickness: 3px;
@@ -105,8 +111,7 @@ header > h2{
 
 .content{
     grid-area: content;
-    background-color: var(--main-background);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--main-background);
     border-radius: var(--radius);
     padding: 20px;
     padding-left: 35px;
@@ -180,6 +185,6 @@ a{
             "sidebar sidebar sidebar"
             "content content content"
             "footer footer footer";
-        grid-template-rows: 10em auto auto 100px;
+        grid-template-rows: auto auto auto 100px;
     }
 }
