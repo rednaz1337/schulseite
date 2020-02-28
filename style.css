@@ -17,7 +17,7 @@
 }
 
 :root{
-    --main-background: #171a27;
+    --main-background: #202538;
     --side-background: #0f111a;
     /*--color1: #ff6a07;
     --color2: #ff194b;*/
@@ -132,7 +132,6 @@ header > h2{
     display: block;
     padding: 10px;
     margin-bottom: 10px;
-    color: #8f93a2;
     font-size: 1.5em;
     text-decoration: none;
     border-top-right-radius: var(--radius);
