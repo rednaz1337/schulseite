@@ -1,7 +1,7 @@
 @font-face{
     src: url("fonts/metropolis/Metropolis-Regular.otf");
     font-family: Metropolis;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 @font-face{
@@ -16,9 +16,23 @@
     font-weight: lighter;
 }
 
+@font-face{
+    src: url("fonts/metropolis/Metropolis-Medium.otf");
+    font-family: Metropolis;
+    font-weight: 500;
+}
+
+@font-face{
+    src: url("fonts/Roboto/Roboto-Regular.ttf");
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+
 :root{
-    --main-background: #202538;
-    --side-background: #0f111a;
+    --border-color: #4b4f61;
+    --primary-background: #08090e;
+    --secondary-background: #0f111a;
     /*--color1: #ff6a07;
     --color2: #ff194b;*/
     --color1: #F78C6C;
@@ -39,7 +53,7 @@ body{
     gap: 20px;
 
     margin: 0 auto;
-    background-color: var(--side-background);
+    background-color: var(--primary-background);
     color: #8f93a2;
     
     font-family: Metropolis;
@@ -67,7 +81,7 @@ header{
     background-position: center;
     background-size: cover;
 
-    box-shadow: 0px -7px 10px rgba(0, 0, 0, 0.9) inset;
+    box-shadow: 0px -7px 20px rgba(0, 0, 0, 0.9) inset;
 
     display: flex;
     flex-direction: column;
@@ -93,7 +107,7 @@ header > h2{
     margin-left: 0.3em;
     margin-right: 0.3;
     text-align: center;
-    font-weight: lighter;
+    font-weight: 500;
     color: white;
 }
 
@@ -101,25 +115,25 @@ header > h2{
     font-size: 2.5em;
     font-weight: normal;
     text-decoration: underline;
-    text-decoration-color: var(--color1);
     text-decoration-thickness: 3px;
-
+    font-family: Metropolis;
 }
 
 .content{
     grid-area: content;
-    border: 2px solid var(--main-background);
+    border: 2px solid var(--border-color);
     border-radius: var(--radius);
     padding: 20px;
     padding-left: 35px;
     line-height: 1.3em;
+    font-family: Roboto;
     font-size: 1.2em;
-    background-color: var(--side-background);
+    font-weight: 500;
+    background-color: var(--secondary-background);
 }
 
 .sidebar{
     grid-area: sidebar;
-    background-color: var(--side-background);
     display: flex;
     flex-direction: column;
 }
@@ -132,15 +146,17 @@ header > h2{
     text-decoration: none;
     border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
-    border: 2px solid var(--main-background);
+    border: 2px solid var(--border-color);
     border-left: none;
+
+    background-color: var(--secondary-background);
     
     transition: all 0.25s;
 }
 
 .sidebar > a:hover{
     background: var(--color1);
-    color: var(--side-background);
+    color: var(--primary-background);
 }
 
 footer{
@@ -167,11 +183,19 @@ a{
     .sidebar > a{
         margin: 2px;
         border-radius: 10px;
-        border: 2px solid var(--main-background);
+        border: 2px solid var(--border-color);
     }
 
     header > h1{
         font-size: 3em;
+    }
+
+    .content > h1{
+        font-size: 1.5em;
+    }
+
+    .content{
+        padding: 10px;
     }
 
     body{
