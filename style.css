@@ -88,7 +88,7 @@ header{
     align-items: center;
     justify-content: center;
 
-    animation: header-fade 5s infinite;
+    animation: header-fade 10s infinite;
 }
 
 header > h1{
@@ -114,8 +114,6 @@ header > h2{
 .content > h1{
     font-size: 2.5em;
     font-weight: normal;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
     font-family: Metropolis;
 }
 
