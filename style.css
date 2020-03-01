@@ -167,6 +167,15 @@ a{
     text-decoration-color: var(--color1);
 }
 
+/*
+    Die Metropolis-Font enthält keine deutschen Anführungszeichen
+*/
+q::before{
+    font-family: Roboto;
+}
+q::after{
+    font-family: Roboto;
+}
 
 @media (max-aspect-ratio: 1/1){
     .sidebar{
