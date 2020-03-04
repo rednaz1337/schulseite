@@ -172,6 +172,15 @@ a{
     display: none;
 }
 
+/*
+    Die Metropolis-Font enthält keine deutschen Anführungszeichen
+*/
+q::before{
+    font-family: Roboto;
+}
+q::after{
+    font-family: Roboto;
+}
 
 @media (max-aspect-ratio: 1/1){
     .navbar{
@@ -203,6 +212,10 @@ a{
 
     .content > h1{
         font-size: 1.5em;
+    }
+
+    .content > h2{
+        font-size: 1.2em;
     }
 
     .content{
