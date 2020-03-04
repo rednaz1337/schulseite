@@ -46,8 +46,8 @@ body{
     display: grid;
     grid-template-areas: 
         "header header header"
-        "sidebar content none"
-        "sidebar footer none";
+        ".      content ."
+        ".      footer .";
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: auto auto 200px;
     gap: 20px;
@@ -82,11 +82,6 @@ header{
     background-size: cover;
 
     box-shadow: 0px -7px 20px rgba(0, 0, 0, 0.9) inset;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     animation: header-fade 10s infinite;
 }
@@ -130,31 +125,37 @@ header > h2{
     background-color: var(--secondary-background);
 }
 
-.sidebar{
-    grid-area: sidebar;
-    display: flex;
-    flex-direction: column;
+.navbar{
+    grid-area: navbar;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.sidebar > a{
+.navbar > a{
     display: block;
+    float: left;
     padding: 10px;
-    margin-bottom: 10px;
     font-size: 1.5em;
     text-decoration: none;
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-    border: 2px solid var(--border-color);
-    border-left: none;
+    color: white;
 
-    background-color: var(--secondary-background);
+    background-color: rgba(0, 0, 0, 0.5);
     
     transition: all 0.25s;
 }
 
-.sidebar > a:hover{
-    background: var(--color1);
-    color: var(--primary-background);
+.navbar > #hamburger{
+    display: block;
+    float: right;
+    font-size: 1.5em;
+    display: none;
+}
+
+.navbar > a:hover{
+    /*
+        HACK:
+        die Border zu setzen würde die Höhe des Links verändern, wodurch sich die seite nach unten verschiebt
+    */
+    box-shadow: 0px 2px 0px var(--color1);
 }
 
 footer{
@@ -167,9 +168,13 @@ a{
     text-decoration-color: var(--color1);
 }
 
+#hamburger-checkbox{
+    display: none;
+}
+
 
 @media (max-aspect-ratio: 1/1){
-    .sidebar{
+    .navbar{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
@@ -178,10 +183,18 @@ a{
         padding-bottom: 10px;
     }
 
-    .sidebar > a{
-        margin: 2px;
-        border-radius: 10px;
-        border: 2px solid var(--border-color);
+    .navbar > a{
+        display: none;
+    }
+
+    .navbar > #hamburger{
+        display: block;
+        float: right;
+    }
+
+    #hamburger-checkbox:checked ~ a{
+        display: block;
+        float: none;
     }
 
     header > h1{
@@ -196,10 +209,52 @@ a{
         padding: 10px;
     }
 
+    #hamburger-checkbox{
+        position: absolute;
+        right: 5px;
+        top: 0px;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+        display: block;
+        z-index: 10;
+    }
+
+    #hamburger{
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        width: 50px;
+        height: 50px;
+    }
+
+    #hamburger span{
+        background-color: white;
+        border-radius: 2px;
+        height: 4px;
+        margin-top: 13px;
+        width: 100%;
+        display: block;
+        transform-origin: center left;
+        transition: all 0.5s;
+    }
+
+    #hamburger-checkbox:checked ~ #hamburger span:nth-child(1){
+        transform: rotate(45deg);
+    }
+
+    #hamburger-checkbox:checked ~ #hamburger span:nth-child(2){
+        opacity: 0;
+    }
+
+    #hamburger-checkbox:checked ~ #hamburger span:nth-child(3){
+        transform: rotate(-45deg);
+    }
+
     body{
         grid-template-areas: 
             "header header header"
-            "sidebar sidebar sidebar"
+            "navbar navbar navbar"
             "content content content"
             "footer footer footer";
         grid-template-rows: auto auto auto 100px;
