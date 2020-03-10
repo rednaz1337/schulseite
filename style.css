@@ -75,7 +75,7 @@ body{
 header{
 
     grid-area: header;
-    background: url("img/wyre.webp");
+    background: url("img/wyre.png");
     background-color: var(--color1);
     background-blend-mode: multiply;
     background-position: center;
