@@ -86,7 +86,7 @@ header{
     animation: header-fade 10s infinite;
 }
 
-header > h1{
+header  h1{
     font-size: 5em;
     font-weight: lighter;
     text-align: center;
@@ -96,7 +96,7 @@ header > h1{
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
-header > h2{
+header  h2{
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
     margin-bottom: 2em;
     margin-left: 0.3em;
@@ -106,10 +106,13 @@ header > h2{
     color: white;
 }
 
-.content > h1{
+.content  h1{
     font-size: 2.5em;
     font-weight: normal;
     font-family: Metropolis;
+    text-decoration: underline;
+    text-decoration-color: var(--color1);
+    text-decoration-thickness: 3px;
 }
 
 .content{
@@ -129,9 +132,9 @@ header > h2{
     grid-area: navbar;
 }
 
-.navbar > a{
+.navbar  a{
     display: block;
-    float: left;
+    float: right;
     padding: 10px;
     font-size: 1.5em;
     text-decoration: none;
@@ -142,14 +145,14 @@ header > h2{
     transition: all 0.25s;
 }
 
-.navbar > #hamburger{
+.navbar  #hamburger{
     display: block;
     float: right;
     font-size: 1.5em;
     display: none;
 }
 
-.navbar > a:hover{
+.navbar  a:hover{
     /*
         HACK:
         die Border zu setzen würde die Höhe des Links verändern, wodurch sich die seite nach unten verschiebt
@@ -191,7 +194,7 @@ q::after{
         padding-bottom: 10px;
     }
 
-    .navbar > a{
+    .navbar  a{
         visibility: hidden;
         float: none;
         opacity: 0;
@@ -204,13 +207,13 @@ q::after{
         padding: 0px;
     }
 
-    .navbar > a:hover{
+    .navbar  a:hover{
         background-color: var(--color1);
         color: var(--primary-background);
         box-shadow: none;
     }
 
-    .navbar > #hamburger{
+    .navbar  #hamburger{
         display: block;
         float: right;
     }
@@ -227,15 +230,15 @@ q::after{
         margin-top: 60px;
     }
 
-    header > h1{
+    header  h1{
         font-size: 3em;
     }
 
-    .content > h1{
+    .content  h1{
         font-size: 1.5em;
     }
 
-    .content > h2{
+    .content  h2{
         font-size: 1.2em;
     }
 
