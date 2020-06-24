@@ -106,16 +106,17 @@ header  h2{
     color: white;
 }
 
-.content  h1{
+main  h1{
     font-size: 2.5em;
     font-weight: normal;
     font-family: Metropolis;
     text-decoration: underline;
     text-decoration-color: var(--color1);
     text-decoration-thickness: 3px;
+    line-height: 1em;
 }
 
-.content{
+main{
     grid-area: content;
     border: 2px solid var(--border-color);
     border-radius: var(--radius);
@@ -128,11 +129,11 @@ header  h2{
     background-color: var(--secondary-background);
 }
 
-.navbar{
+nav{
     grid-area: navbar;
 }
 
-.navbar  a{
+nav  a{
     display: block;
     float: right;
     padding: 10px;
@@ -145,14 +146,14 @@ header  h2{
     transition: all 0.25s;
 }
 
-.navbar  #hamburger{
+nav  #hamburger{
     display: block;
     float: right;
     font-size: 1.5em;
     display: none;
 }
 
-.navbar  a:hover{
+nav  a:hover{
     /*
         HACK:
         die Border zu setzen würde die Höhe des Links verändern, wodurch sich die seite nach unten verschiebt
@@ -184,8 +185,23 @@ q::after{
     font-family: Roboto;
 }
 
+figure {
+    max-width: 200px;
+    display: block;
+    float: right;
+
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+
+    padding: var(--radius);
+}
+
+figure img {
+    max-width: 100%;
+}
+
 @media (max-aspect-ratio: 1/1){
-    .navbar{
+    nav{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
@@ -194,7 +210,7 @@ q::after{
         padding-bottom: 10px;
     }
 
-    .navbar  a{
+    nav  a{
         visibility: hidden;
         float: none;
         opacity: 0;
@@ -207,13 +223,13 @@ q::after{
         padding: 0px;
     }
 
-    .navbar  a:hover{
+    nav  a:hover{
         background-color: var(--color1);
         color: var(--primary-background);
         box-shadow: none;
     }
 
-    .navbar  #hamburger{
+    nav  #hamburger{
         display: block;
         float: right;
     }
@@ -234,15 +250,15 @@ q::after{
         font-size: 3em;
     }
 
-    .content  h1{
+    main  h1{
         font-size: 1.5em;
     }
 
-    .content  h2{
+    main  h2{
         font-size: 1.2em;
     }
 
-    .content{
+    main{
         padding: 10px;
     }
 
